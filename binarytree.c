@@ -110,6 +110,9 @@ void delete(struct node** root, int data)
     }
 }
 
+
+
+
 void main()
 {
     struct node* root = NULL;
@@ -141,5 +144,13 @@ void main()
     printf("postorder: ");
     postorder(root);
     printf("\n");
+
+    printf("BFS: ");
+    BFS(root);
+    printf("\n");
+    printf("DFS: ");
+    DFS(root);
+    printf("\n");
+
 
 }
