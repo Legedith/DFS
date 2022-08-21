@@ -98,12 +98,35 @@ char* infixToPostfix(char* infix)
 }
 
 
-void main()
+int main()
 {
     char* infix = (char*)malloc(sizeof(char) * 100);
-    printf("Enter the infix expression: ");
-    scanf("%s", infix);
+    // printf("Enter the infix expression: ");
+    // scanf("%s", infix);
+    gets(infix);
+
+    int k = 0;
+    for(int i=0 ; infix[i]!='\0' ; i++){
+     	infix[i]=infix[i+k];
+
+     	if(infix[i]==' '|| infix[i]=='\t'){
+		  k++;
+		  i--;
+	    }
+    }
+
+    printf("string after removing all blank spaces:");
+
+ 	printf(" %s \n",infix);
+    // remove spaces from input
+    // print the input
+    printf("The infix expression is: %s", infix); 
     char* postfix = infixToPostfix(infix);
-    printf("Postfix expression: %s", postfix);
+    // printf("Postfix expression: %s", postfix);
+    // Print char array postfix wit spaces betwwen each character
+    for(int i=0 ; postfix[i]!='\0' ; i++){
+    	printf("%c ",postfix[i]);
+    }
+    return 0;
 }
 

@@ -112,13 +112,6 @@ int delete_at_middle()
         printf("List is empty\n");
         return -1;
     }
-    // Get the size of the list
-    // varaiable length
-    // traverse the list while incrementing length
-    // calculate middle
-    // traverse to that point in list
-    // delete data at that point
-    // call the print fuinction to print out the list
     int length = 0;
     struct node *temp = head;
     while (temp != NULL)
@@ -164,8 +157,9 @@ void main()
         printf("Enter 1 to insert at front\n");
         printf("Enter 2 to insert at middle\n");
         printf("Enter 3 to delete at front\n");
-        printf("Enter 4 to print list\n");
-        printf("Enter 5 to exit\n");
+        printf("Enter 4 to delete at middle\n");
+        printf("Enter 5 to print list\n");
+        printf("Enter 6 to exit\n");
         printf("\n\nEnter your choice: ");
         scanf("%d", &choice);
         printf("%d\n", choice);
@@ -198,9 +192,22 @@ void main()
         }
         else if (choice == 4)
         {
-            print_list();
+            // Delete from front
+            int x = delete_at_middle();
+            if (x == -1)
+            {
+                printf("List is empty\n");
+            }
+            else
+            {
+                printf("Deleted %d\n", x);
+            }
         }
         else if (choice == 5)
+        {
+            print_list();
+        }
+        else if (choice == 6)
         {
             break;
         }
